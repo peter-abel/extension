@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "ADHD-Friendly Productivity Tracker",
+    "version": "1.0",
+    "description": "Track time on social media and improve productivity with CBT-based strategies",
+    "permissions": [
+      "storage",
+      "alarms",
+      "tabs",
+      "webNavigation",
+      "notifications"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"]
+      }
+    ]
+  }
